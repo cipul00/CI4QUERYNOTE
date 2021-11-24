@@ -8,10 +8,8 @@ class UserModel extends Model
 {
     protected $table = 'de_pickup_note';
 
-    public function getUsers()
+    public function getpickup()
     {
         return $this->findAll();
-        // $query = $this->db->get('de_pickup_note', 20);
-        // return $query;
     }
 }

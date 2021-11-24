@@ -10,14 +10,15 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-        </div>
+        <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Pickup Note</h6>
+        </div> -->
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Pickup Note</th>
                             <th>Station</th>
                             <th>Account</th>
@@ -28,6 +29,7 @@
                     </thead>
                     <tfoot>
                         <tr>
+                            <th>No</th>
                             <th>Pickup Note</th>
                             <th>Station</th>
                             <th>Account</th>
@@ -38,21 +40,17 @@
                     </tfoot>
                     <tbody>
 
-                        <?php
-                        foreach ($data as $users) {
-                            // var_dump($user);
-                        ?>
+                        <?php foreach ($de_pickup_note as $key => $value) : ?>
                             <tr>
-                                <td><?php echo $users['pickup_no']; ?></td>
-                                <td><?php echo $users['sta_code']; ?></td>
-                                <td><?php echo $users['account_no']; ?></td>
-                                <td><?php echo $users['product']; ?></td>
-                                <td><?php echo $users['content']; ?></td>
-                                <td><?php echo $users['pickup_date']; ?></td>
+                                <td><?= $key + 1 ?></td>
+                                <td><?= $value->pickup_no ?></td>
+                                <td><?= $value->sta_code ?></td>
+                                <td><?= $value->account_no ?></td>
+                                <td><?= $value->product ?></td>
+                                <td><?= $value->pickup_empl ?></td>
+                                <td><?= $value->pickup_date ?></td>
                             </tr>
-                        <?php
-                        }
-                        ?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
