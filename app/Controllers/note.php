@@ -2,11 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Models\UserModel;
-
-class pickup extends BaseController
+class note extends BaseController
 {
-    public function index()
+
+    public function inner()
     {
         $data['title'] = 'Pickup Note';
 
